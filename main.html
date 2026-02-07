@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Rose Day</title>
+<style>
+:root {
+  --pink: #ff4b6e;
+  --light: #fff5f7;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(160deg, #ff758c, #ff7eb3);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  text-align: center;
+  background: rgba(255,255,255,0.95);
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  max-width: 420px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  color: var(--pink);
+  font-size: 38px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.bouquet {
+  font-size: 120px;
+  margin-top: 15px;
+  animation: float 3s infinite ease-in-out;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 30px;
+  background: var(--pink);
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1 id="title"></h1>
+  <div class="subtitle">A bouquet full of love, just for you</div>
+  <div class="bouquet">🌹</div>
+  <button class="btn" onclick="showLove()">Tap for Surprise</button>
+</div>
+
+<script>
+let text = "Happy Rose Day Nabila ❤️";
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("title").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 90);
+  }
+}
+
+function showLove() {
+  alert("Even miles away, my heart stays with you 🌹\nI love you so much 💖");
+}
+
+window.onload = typeEffect;
+</script>
+
+</body>
+</html>
